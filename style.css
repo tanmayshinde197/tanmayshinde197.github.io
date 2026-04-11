@@ -861,6 +861,21 @@ ul { list-style: none; }
   z-index: 2;
 }
 
+.project-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent2);
+  text-decoration: none;
+  font-family: var(--mono);
+  transition: color 0.3s;
+}
+
+.project-link:hover {
+  color: var(--accent);
+}
+
 /* ===== Education ===== */
 .education-grid {
   display: grid;

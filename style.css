@@ -993,10 +993,20 @@ ul { list-style: none; }
 /* ===== Footer ===== */
 .footer {
   text-align: center;
-  padding: 40px 24px;
+  padding: 40px 24px 24px;
   border-top: 1px solid var(--border);
   color: var(--text-muted);
   font-size: 0.85rem;
+  position: relative;
+}
+
+.easter-egg {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 0.55rem;
+  color: rgba(136, 136, 160, 0.3);
+  font-family: var(--mono);
 }
 
 /* ===== Reveal Animation ===== */

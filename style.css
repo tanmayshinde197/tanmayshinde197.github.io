@@ -521,15 +521,15 @@ ul { list-style: none; }
   object-fit: contain;
 }
 
-.tq-logo {
+.co-logo {
   background: var(--accent);
-  color: var(--bg);
+  color: #fff;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-family: var(--font);
   flex-shrink: 0;
 }

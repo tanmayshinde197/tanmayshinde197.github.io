@@ -1,59 +1,495 @@
 <!DOCTYPE html>
-
-<html>
-  <head>
-    <title>My blog</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
-  <body>
-
-<div id="header">
-  <div class="container">
-    <a id="header-title" href="index.html">My blog</a>
-    <ul id="header-nav">
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="more.html">More</a></li>
-    </ul>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanmay Shinde - Cloud Support Engineer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Animated background -->
+  <canvas id="particles" class="bg-canvas"></canvas>
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
   </div>
-</div>
-<div id="content">
-<div class="container">
-  <div class="post">
-    <div class="post-author">
-      <img src="me2.png" width="150px" height="150px">
-      <span>Tanmay</span>
-    </div>
-    <p class="post-date">18th November</p>
-    <h3 class="post-title">Becoming a web dev.</h3>
-    <div class="post-content">
-      <p>This is a test. I'm writing a blog. This is going to be my first blog.
-        Im writing this blog to share my views and stories with the audience.</p>
-      <p>I'll be talking about all the issues which may include <strong>politics, pop-culture,
-        personal experiences and many more.</strong></p>
-    </div>
-  </div>
-</div>
-</div>
-<div id="footer">
-  <div class="container">
-    <div class="column">
-      <h4>My Links</h4>
-      <p>
-      <a href="https://www.facebook.com">Facebook</a>
-      <br>
-      <a href="https://www.youtube.com">Youtube</a>
-      <br>
-      <a href="<a href="mailto:tanmay.bluethunder@gmail.com=feedback">email me</a>
-      </p>
-    </div>
-    <div class="column">
-      <h4>My Story</h4>
-      <p>Hello there. I'm Tanmay Shinde, a technology enthusiast. This is my first web
-        design project and I hope you like it.</p>
 
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">&lt;TS /&gt;</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-</div>
-  </div>
-  </body>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-greeting reveal" data-delay="0">Hello, I'm</p>
+      <h1 class="hero-name reveal" data-delay="100">Tanmay Shinde<span class="cursor">_</span></h1>
+      <h2 class="hero-title reveal" data-delay="200">Cloud Support Engineer II at AWS</h2>
+      <p class="hero-subtitle reveal" data-delay="300">EC2 Linux SME · 2x AWS Certified · MSc Cyber-Security · 4+ years cloud infrastructure</p>
+      <div class="hero-cta reveal" data-delay="400">
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+        <a href="#experience" class="btn btn-outline">View Experience</a>
+      </div>
+    </div>
+    <div class="hero-terminal reveal" data-delay="300" data-parallax="0.05">
+      <div class="terminal-bar">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-title">tanmay@aws ~ %</span>
+      </div>
+      <div class="terminal-body">
+        <p><span class="prompt">$</span> cat about.txt</p>
+        <p class="typing" id="terminal-text"></p>
+        <p><span class="prompt">$</span> <span class="cursor-blink">▌</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section" id="experience">
+    <h2 class="section-title reveal">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card" data-glow><div class="card-glow"></div>
+          <div class="timeline-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" class="company-logo">
+            <div>
+              <h3>AWS - Cloud Support Engineer II</h3>
+              <span class="timeline-date">Mar 2025 – Present · Dublin, Ireland</span>
+            </div>
+          </div>
+          <ul class="timeline-details">
+            <li>Key escalation point for complex EC2 Linux and infrastructure issues</li>
+            <li>Expert-level guidance on EC2 architecture, Linux systems, and performance optimisation</li>
+            <li>Handle critical escalations to EC2 Ops, resolving complex architectural challenges</li>
+            <li>Drive knowledge sharing through documentation, training sessions, and peer mentoring</li>
+            <li>Support strategic enterprise customers with mission-critical workloads</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card" data-glow><div class="card-glow"></div>
+          <div class="timeline-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" class="company-logo">
+            <div>
+              <h3>AWS - Cloud Support Engineer I</h3>
+              <span class="timeline-date">Apr 2023 – Mar 2025 · Dublin, Ireland</span>
+            </div>
+          </div>
+          <ul class="timeline-details">
+            <li>Advanced technical support for AWS Premium customers on EC2 Linux</li>
+            <li>Resolved complex issues involving Linux systems, networking, and AWS service integrations</li>
+            <li>Handled escalations to EC2 Ops - troubleshooting underlying hardware, software, and network</li>
+            <li>Authored technical documentation and knowledge base articles across the organisation</li>
+            <li>Achieved EC2 Linux Subject Matter Expert status</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card" data-glow><div class="card-glow"></div>
+          <div class="timeline-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS Logo" class="company-logo">
+            <div>
+              <h3>AWS - Cloud Support Associate</h3>
+              <span class="timeline-date">Feb 2022 – Apr 2023 · Dublin, Ireland</span>
+            </div>
+          </div>
+          <ul class="timeline-details">
+            <li>Graduate Associate in AWS Premium Support, focusing on EC2 services</li>
+            <li>Built strong foundation in Linux system administration and AWS infrastructure</li>
+            <li>Handled OS issues, networking configurations, and AWS service integrations</li>
+            <li>Demonstrated rapid technical growth handling increasingly complex cases</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card" data-glow><div class="card-glow"></div>
+          <div class="timeline-header">
+            <img src="https://www.convergint.com/wp-content/uploads/convergint-logo.svg" alt="Convergint Logo" class="company-logo" onerror="this.style.display='none'">
+            <div>
+              <h3>Convergint Technologies - Commercial Service Coordinator (EMEA)</h3>
+              <span class="timeline-date">Oct 2020 – Feb 2022 · Dublin, Ireland</span>
+            </div>
+          </div>
+          <ul class="timeline-details">
+            <li>Handled client cases with network/infrastructure related issues across EMEA and USA</li>
+            <li>Provided technical support and problem-solving via telephone and email</li>
+            <li>Presented business reports and dashboards to client stakeholders</li>
+            <li>Escalated unresolved issues and maintained high standards of customer service</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card" data-glow><div class="card-glow"></div>
+          <div class="timeline-header">
+            <div>
+              <h3>ANZ - Virtual Cybersecurity Internship</h3>
+              <span class="timeline-date">Jun 2020 · Ireland</span>
+            </div>
+          </div>
+          <ul class="timeline-details">
+            <li>Network analysis on pcap files - reconstructed data and images using Wireshark and Hex Editor</li>
+            <li>Digital investigation on email samples - verified malicious vs genuine</li>
+            <li>Forensics investigation on network logs using Autopsy, OS Forensics, and Tshark</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card" data-glow><div class="card-glow"></div>
+          <div class="timeline-header">
+            <div>
+              <h3>Technoquake - Information Security Analyst Intern</h3>
+              <span class="timeline-date">Nov 2018 – Nov 2019 · Pune, India</span>
+            </div>
+          </div>
+          <ul class="timeline-details">
+            <li>Scanned client websites, applications, and systems for vulnerabilities</li>
+            <li>IBM QRadar for SOC triage, event reporting, and escalation of critical events</li>
+            <li>White-box and black-box penetration testing with Nmap, Metasploit, Burp Suite, SQLMap</li>
+            <li>Network troubleshooting and vulnerability remediation support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <h2 class="section-title reveal">Skills</h2>
+    <div class="skills-wrap reveal">
+      <div class="skill-badge" data-skill="AWS" data-desc="4+ years on the AWS Support team. Delivered expert troubleshooting across EC2, VPC, ELB, and IAM for enterprise customers. Earned DevOps Professional and Solutions Architect certifications.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS">
+        <span>AWS</span>
+      </div>
+      <div class="skill-badge" data-skill="Linux" data-desc="EC2 Linux Subject Matter Expert. Deep expertise in RHEL, Ubuntu, and Amazon Linux - kernel tuning, boot issues, filesystem recovery, and performance analysis across thousands of customer cases.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+        <span>Linux</span>
+      </div>
+      <div class="skill-badge" data-skill="RHEL" data-desc="RHCE trained. Extensive hands-on with Red Hat Enterprise Linux in production AWS environments - SELinux, systemd, yum/dnf package management, and enterprise hardening.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg" alt="RHEL">
+        <span>RHEL</span>
+      </div>
+      <div class="skill-badge" data-skill="Ubuntu" data-desc="Regularly supported Ubuntu-based EC2 instances. Troubleshot networking, apt package issues, cloud-init configs, and kernel upgrades for AWS customers.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-original.svg" alt="Ubuntu">
+        <span>Ubuntu</span>
+      </div>
+      <div class="skill-badge" data-skill="Bash" data-desc="Primary scripting language for automation at AWS. Built internal tooling, log parsers, and diagnostic scripts used by the support team to speed up case resolution.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash">
+        <span>Bash</span>
+      </div>
+      <div class="skill-badge" data-skill="Python" data-desc="Built the AI Resume Optimizer pipeline - LaTeX PDF generation, Gmail API rejection scanner, Google Drive sync, and a job tracker handling 77+ applications. Also used for internal AWS automation.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <span>Python</span>
+      </div>
+      <div class="skill-badge" data-skill="Perl" data-desc="Used for text processing and log analysis in Linux environments. Handy for quick one-liners and legacy system maintenance scripts.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/perl/perl-original.svg" alt="Perl">
+        <span>Perl</span>
+      </div>
+      <div class="skill-badge" data-skill="C++" data-desc="Studied during BE Computer Science at University of Pune. Applied in data structures, algorithms, and systems programming coursework.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+        <span>C++</span>
+      </div>
+      <div class="skill-badge" data-skill="Docker" data-desc="Used for containerising development environments and testing reproducible setups. Applied in personal projects and internal tooling workflows.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+        <span>Docker</span>
+      </div>
+      <div class="skill-badge" data-skill="Prometheus" data-desc="Experience with Prometheus for infrastructure monitoring, alerting, and SLO tracking. Used alongside Grafana for observability dashboards.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus">
+        <span>Prometheus</span>
+      </div>
+      <div class="skill-badge" data-skill="IaC" data-desc="Infrastructure as Code using Terraform and CloudFormation. Applied in AWS architecture design and certified through the DevOps Professional exam.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">
+        <span>IaC</span>
+      </div>
+      <div class="skill-badge" data-skill="Git" data-desc="Daily driver for version control across all projects. Used GitHub for the AI Resume Optimizer, portfolio site, and collaborative work at AWS.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+        <span>Git</span>
+      </div>
+      <div class="skill-badge" data-skill="Jira" data-desc="Used extensively at AWS for case tracking, sprint planning, and incident management workflows across the support engineering team.">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira">
+        <span>Jira</span>
+      </div>
+      <div class="skill-badge" data-skill="Wireshark" data-desc="Packet-level network analysis for troubleshooting customer connectivity issues at AWS - TCP handshakes, DNS resolution failures, and VPN tunnel debugging.">
+        <img src="https://cdn.simpleicons.org/wireshark/1679A7" alt="Wireshark">
+        <span>Wireshark</span>
+      </div>
+      <div class="skill-badge" data-skill="VMware" data-desc="Used for virtualised lab environments during security analyst internship at Technoquake and for personal penetration testing practice on HackTheBox/VulnHub.">
+        <img src="https://cdn.simpleicons.org/vmware/607078" alt="VMware">
+        <span>VMware</span>
+      </div>
+      <div class="skill-badge" data-skill="VirtualBox" data-desc="Primary hypervisor for the MSc thesis lab environment. Ran Ubuntu 18.04 honeypot and Kali attacker VMs on an isolated virtual network to test DDoS detection, game theory mitigation, and LaikaBoss malware scanning.">
+        <img src="https://cdn.simpleicons.org/virtualbox/183A61" alt="VirtualBox">
+        <span>VirtualBox</span>
+      </div>
+      <div class="skill-badge" data-skill="Splunk" data-desc="SIEM tool used during security analyst internship for log aggregation, threat hunting, and SOC triage of security events.">
+        <img src="https://cdn.simpleicons.org/splunk/000000" alt="Splunk">
+        <span>Splunk</span>
+      </div>
+      <div class="skill-badge" data-skill="Metasploit" data-desc="Used for penetration testing during MSc and internship. Exploit development, payload delivery, and post-exploitation on vulnerable machines.">
+        <img src="https://cdn.simpleicons.org/metasploit/2596CD" alt="Metasploit">
+        <span>Metasploit</span>
+      </div>
+      <div class="skill-badge" data-skill="TCP/IP" data-desc="Core networking knowledge applied daily at AWS - diagnosing routing issues, MTU problems, packet loss, and connectivity failures for EC2 instances.">
+        <span class="skill-emoji">🌐</span>
+        <span>TCP/IP</span>
+      </div>
+      <div class="skill-badge" data-skill="DNS" data-desc="Resolved DNS propagation issues, Route 53 misconfigurations, and split-horizon DNS problems for AWS customers across global infrastructure.">
+        <span class="skill-emoji">🌐</span>
+        <span>DNS</span>
+      </div>
+      <div class="skill-badge" data-skill="BGP" data-desc="Troubleshot BGP peering and route advertisement issues for AWS Direct Connect and VPN customers. Analysed route tables and AS path attributes.">
+        <span class="skill-emoji">🌐</span>
+        <span>BGP</span>
+      </div>
+      <div class="skill-badge" data-skill="IPsec" data-desc="Debugged IPsec VPN tunnel establishment, IKE phase negotiations, and encryption mismatches for Site-to-Site VPN connections on AWS.">
+        <span class="skill-emoji">🔒</span>
+        <span>IPsec</span>
+      </div>
+      <div class="skill-badge" data-skill="Load Balancing" data-desc="Supported ALB, NLB, and CLB configurations. Diagnosed health check failures, sticky sessions, cross-zone balancing, and TLS termination issues.">
+        <span class="skill-emoji">⚖️</span>
+        <span>Load Balancing</span>
+      </div>
+      <div class="skill-badge" data-skill="VPC" data-desc="Expert in VPC architecture - subnets, route tables, NACLs, security groups, peering, transit gateways, and PrivateLink troubleshooting.">
+        <span class="skill-emoji">☁️</span>
+        <span>VPC</span>
+      </div>
+      <div class="skill-badge" data-skill="EC2" data-desc="Subject Matter Expert. Thousands of cases resolved - instance launch failures, EBS performance, placement groups, instance store recovery, and nitro platform issues.">
+        <span class="skill-emoji">☁️</span>
+        <span>EC2</span>
+      </div>
+      <div class="skill-badge" data-skill="Pen Testing" data-desc="Active on HackTheBox, TryHackMe, and VulnHub. Performed vulnerability assessments and penetration testing during internship at Technoquake.">
+        <span class="skill-emoji">🔒</span>
+        <span>Pen Testing</span>
+      </div>
+      <div class="skill-badge" data-skill="SOC Triage" data-desc="Security Operations Centre triage during internship - analysing alerts from QRadar and Splunk, classifying incidents, and escalating threats.">
+        <span class="skill-emoji">🛡️</span>
+        <span>SOC Triage</span>
+      </div>
+      <div class="skill-badge" data-skill="Nmap" data-desc="Network reconnaissance and port scanning for penetration testing engagements. Used for service enumeration and vulnerability discovery on target machines.">
+        <span class="skill-emoji">📡</span>
+        <span>Nmap</span>
+      </div>
+    </div>
+
+    <!-- Skill Modal -->
+    <div class="skill-modal-overlay" id="skillModal">
+      <div class="skill-modal">
+        <button class="skill-modal-close" aria-label="Close">&times;</button>
+        <h3 id="skillModalTitle"></h3>
+        <p id="skillModalDesc"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="section" id="certifications">
+    <h2 class="section-title reveal">Certifications</h2>
+    <div class="certs-grid">
+      <a href="https://www.credly.com/badges/bd31ef42-d460-493e-8503-39592aaf0458" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-glow><div class="card-glow"></div>
+        <img src="https://images.credly.com/images/bd31ef42-d460-493e-8503-39592aaf0458/image.png" alt="AWS DevOps Professional Badge" class="cert-badge">
+        <h3>AWS Certified DevOps Engineer – Professional</h3>
+        <span class="cert-year">Expires Aug 2028</span>
+      </a>
+      <a href="https://www.credly.com/badges/0e284c3f-5164-4b21-8660-0d84737941bc" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-glow><div class="card-glow"></div>
+        <img src="https://images.credly.com/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Solutions Architect Associate Badge" class="cert-badge">
+        <h3>AWS Certified Solutions Architect – Associate</h3>
+        <span class="cert-year">Expires Aug 2026</span>
+      </a>
+      <a href="https://www.credly.com/badges/e67695e0-8877-4b66-bb28-744a9baeb17e" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-glow><div class="card-glow"></div>
+        <img src="https://images.credly.com/images/e67695e0-8877-4b66-bb28-744a9baeb17e/image.png" alt="EC2 Linux SME Badge" class="cert-badge">
+        <h3>EC2 Linux Subject Matter Expert</h3>
+        <span class="cert-year">AWS Internal · Apr 2024</span>
+      </a>
+      <a href="https://www.credly.com/badges/e66cfe55-7840-4628-bd31-16147d07c515" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-glow><div class="card-glow"></div>
+        <img src="https://images.credly.com/images/e66cfe55-7840-4628-bd31-16147d07c515/image.png" alt="MVP Award Badge" class="cert-badge">
+        <h3>Most Valuable Player Award</h3>
+        <span class="cert-year">AWS Support · Jun 2023</span>
+      </a>
+      <a href="https://www.credly.com/badges/97c269f6-c8d0-40bd-8cbc-5c7834dbbc91" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-glow><div class="card-glow"></div>
+        <img src="https://images.credly.com/images/97c269f6-c8d0-40bd-8cbc-5c7834dbbc91/blob" alt="AWS AI Foundational Badge" class="cert-badge">
+        <h3>AWS AI Foundational (L100)</h3>
+        <span class="cert-year">Expires Sep 2026</span>
+      </a>
+      <a href="https://www.credly.com/badges/4b547104-5ce9-43d5-8708-a7abb4b0c7ec" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-glow><div class="card-glow"></div>
+        <img src="https://images.credly.com/images/4b547104-5ce9-43d5-8708-a7abb4b0c7ec/blob" alt="AWS GenAI Essentials Badge" class="cert-badge">
+        <h3>AWS Partner: Generative AI Essentials</h3>
+        <span class="cert-year">Aug 2025</span>
+      </a>
+      <a href="https://www.credly.com/badges/0b4c54ef-b1d8-4aa7-a658-230b74dec7f6" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-glow><div class="card-glow"></div>
+        <img src="https://images.credly.com/images/0b4c54ef-b1d8-4aa7-a658-230b74dec7f6/blob" alt="MongoDB Badge" class="cert-badge">
+        <h3>MongoDB Overview: Core Concepts & Architecture</h3>
+        <span class="cert-year">Feb 2026</span>
+      </a>
+      <a href="https://www.credly.com/badges/c617d37c-9c45-4617-aabf-e11954e188ec" target="_blank" rel="noopener noreferrer" class="cert-card reveal" data-glow><div class="card-glow"></div>
+        <img src="https://images.credly.com/images/c617d37c-9c45-4617-aabf-e11954e188ec/blob" alt="Cybersecurity Badge" class="cert-badge">
+        <h3>Cybersecurity Roles, Processes & OS Security</h3>
+        <span class="cert-year">Coursera · Sep 2020</span>
+      </a>
+      <div class="cert-card reveal" data-glow><div class="card-glow"></div>
+        <div class="cert-dual-badges">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redhat/redhat-original.svg" alt="RHCE Badge" class="cert-badge">
+          <img src="https://cdn.simpleicons.org/cisco/1BA0D7" alt="CCNA Badge" class="cert-badge">
+        </div>
+        <h3>RHCE & CCNA Trained</h3>
+        <span class="cert-year"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <h2 class="section-title reveal">Projects</h2>
+    <div class="projects-grid">
+      <div class="tilt-card reveal" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="tilt-glow"></div>
+          <div class="project-number">01</div>
+          <div class="project-icon">🍯</div>
+          <h3>Honeypots & Game Theory</h3>
+          <p>MSc thesis - built a multi-layered network security system. Python honeypot opens fake services on configurable ports, captures raw packets (Ethernet/IPv4/TCP/UDP/ICMP parsing from raw sockets), and logs all connection data into MySQL. Game theory engine uses Nash Equilibrium via nashpy to decide optimal defence - Layer 1 detects DDoS by monitoring connection thresholds, Layer 2 calculates payoff matrices to choose between blocking IPs or dropping packets. Integrated LaikaBoss framework for malware detection using custom YARA rules and dispatch logic - successfully detected Petya ransomware and Emotet samples. Zeek IDS runs alongside for passive traffic monitoring. Hardened with iptables scripts for bad TCP flag detection, ICMP flood prevention, and connection state tracking. Tested across Ubuntu and Kali VMs on VMware.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">MySQL</span><span class="tag">Nash Equilibrium</span><span class="tag">Raw Sockets</span><span class="tag">YARA Rules</span><span class="tag">LaikaBoss</span><span class="tag">Zeek IDS</span><span class="tag">iptables</span><span class="tag">Bash</span><span class="tag">VMware</span><span class="tag">Wireshark</span>
+          </div>
+        </div>
+      </div>
+      <div class="tilt-card reveal" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="tilt-glow"></div>
+          <div class="project-number">02</div>
+          <div class="project-icon">🧠</div>
+          <h3>Gmail & Drive Personal Assistant</h3>
+          <p>TypeScript MCP server that gives AI assistants direct access to Gmail and Google Drive across multiple accounts. Multi-account OAuth 2.0 with automatic token refresh and secure file-based storage. Search emails with rich filters (sender, subject, date range, labels), retrieve full threads, and extract attachment text. Drive search and download with Google Workspace export support. Built a text extraction pipeline handling PDF (pdf-parse), DOCX (mammoth), XLSX/CSV (xlsx), and images via Tesseract.js OCR. Includes an attachment caching layer and full Vitest test suite.</p>
+          <div class="project-tags">
+            <span class="tag">TypeScript</span><span class="tag">MCP</span><span class="tag">Gmail API</span><span class="tag">Google Drive API</span><span class="tag">OAuth 2.0</span><span class="tag">Tesseract OCR</span><span class="tag">Node.js</span><span class="tag">Vitest</span>
+          </div>
+        </div>
+      </div>
+      <div class="tilt-card reveal" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="tilt-glow"></div>
+          <div class="project-number">03</div>
+          <div class="project-icon">🚌</div>
+          <h3>Live Bus Tracking & Smart Transit</h3>
+          <p>BE final year project - full-stack real-time bus tracking system. React Native vehicle client mounted in buses fetches GPS coordinates via GeoLocation API and pushes location updates to a central Node.js JSON server via RESTful PUT requests. ReactJS passenger web app (mobile-responsive with MaterializeCSS) lets commuters enter start/destination stops and see live bus positions on Google Maps. SuperAgent handles all HTTP calls between clients and server. Three-tier architecture: vehicle client, passenger client, and centralised backend.</p>
+          <div class="project-tags">
+            <span class="tag">Node.js</span><span class="tag">ReactJS</span><span class="tag">React Native</span><span class="tag">Google Maps API</span><span class="tag">GeoLocation API</span><span class="tag">REST API</span><span class="tag">MaterializeCSS</span><span class="tag">GPS</span>
+          </div>
+        </div>
+      </div>
+      <div class="tilt-card reveal" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="tilt-glow"></div>
+          <div class="project-number">04</div>
+          <div class="project-icon">🤖</div>
+          <h3>AI Resume Optimizer</h3>
+          <p>End-to-end automation pipeline built with Python. Generates tailored resumes from LaTeX templates, compiles to PDF and DOCX, then auto-syncs to Google Drive via the Drive API. Integrated Gmail API to scan for recruiter rejection emails and auto-log them. Python handles all orchestration - file I/O, API auth, template rendering, and scheduling.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">LaTeX</span><span class="tag">Gmail API</span><span class="tag">Google Drive API</span><span class="tag">OAuth 2.0</span><span class="tag">Automation</span>
+          </div>
+        </div>
+      </div>
+      <div class="tilt-card reveal" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="tilt-glow"></div>
+          <div class="project-number">05</div>
+          <div class="project-icon">💬</div>
+          <h3>AI Career Bot</h3>
+          <p>Telegram chatbot for career guidance, powered by AWS Bedrock with Claude as the LLM backend. FastAPI serves as the webhook handler, receiving Telegram messages and routing them to Bedrock for inference. Python manages conversation context, prompt engineering, and response formatting. Deployed on AWS with IAM roles for secure Bedrock access.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">AWS Bedrock</span><span class="tag">Telegram API</span><span class="tag">IAM</span><span class="tag">Claude LLM</span>
+          </div>
+          <span class="project-status">In Progress</span>
+        </div>
+      </div>
+      <div class="tilt-card reveal" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="tilt-glow"></div>
+          <div class="project-number">06</div>
+          <div class="project-icon">🔓</div>
+          <h3>Penetration Testing Labs</h3>
+          <p>Ongoing offensive security practice across HackTheBox, TryHackMe, and VulnHub. Use Nmap for reconnaissance and port scanning, Metasploit for exploitation and post-exploitation, Burp Suite for web app testing, and SQLMap for injection attacks. Run isolated lab environments in VMware and VirtualBox. Document findings and attack chains for each machine.</p>
+          <div class="project-tags">
+            <span class="tag">Nmap</span><span class="tag">Metasploit</span><span class="tag">Burp Suite</span><span class="tag">SQLMap</span><span class="tag">VMware</span><span class="tag">HackTheBox</span><span class="tag">TryHackMe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section" id="education">
+    <h2 class="section-title reveal">Education</h2>
+    <div class="education-grid">
+      <div class="edu-card reveal">
+        <div class="edu-icon">🎓</div>
+        <h3>MSc Cyber-Security</h3>
+        <p>National College of Ireland</p>
+        <span class="edu-detail">2:1 Honours · 2019 – 2020</span>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-icon">🎓</div>
+        <h3>BE Computer Engineering</h3>
+        <p>Savitribai Phule Pune University</p>
+        <span class="edu-detail">First Class with Distinction · 2014 – 2018</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <h2 class="section-title reveal">Contact Me</h2>
+    <p class="contact-subtitle reveal">Got a question or want to work together? Drop me a message.</p>
+    <div class="contact-grid reveal">
+      <a href="mailto:tanmayshinde197@gmail.com" class="contact-card" aria-label="Send email">
+        <div class="contact-icon">✉️</div>
+        <h3>Email</h3>
+        <p>tanmayshinde197@gmail.com</p>
+      </a>
+      <a href="https://linkedin.com/in/tanmayshinde197" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Visit LinkedIn profile">
+        <div class="contact-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="contact-img">
+        </div>
+        <h3>LinkedIn</h3>
+        <p>tanmayshinde197</p>
+      </a>
+      <a href="https://github.com/tanmayshinde197" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="Visit GitHub profile">
+        <div class="contact-icon">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" class="contact-img github-icon">
+        </div>
+        <h3>GitHub</h3>
+        <p>tanmayshinde197</p>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Tanmay Shinde. Built with ☕ and curiosity.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

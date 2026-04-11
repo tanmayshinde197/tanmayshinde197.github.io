@@ -262,6 +262,29 @@
       }
     } else {
       el.innerHTML = text;
+      // Easter egg: secret command after a pause
+      setTimeout(function() {
+        if (window.eggFound) window.eggFound('terminal');
+        var secretLine = '\n<span class="prompt">$</span> sudo hire tanmay';
+        var secretResponse = '\n<span style="color:#28c840">✓ Access granted. Welcome aboard.</span>';
+        var idx = 0;
+        var full = secretLine + secretResponse;
+        function typeSecret() {
+          if (idx < full.length) {
+            // Skip HTML tags
+            if (full[idx] === '<') {
+              var closeIdx = full.indexOf('>', idx);
+              el.innerHTML = text + full.substring(0, closeIdx + 1);
+              idx = closeIdx + 1;
+            } else {
+              idx++;
+            }
+            el.innerHTML = text + full.substring(0, idx);
+            setTimeout(typeSecret, idx <= secretLine.length ? 40 : 20);
+          }
+        }
+        typeSecret();
+      }, 3000);
     }
   }
   setTimeout(type, 800);
@@ -388,4 +411,264 @@ window.addEventListener('scroll', function() {
       glow.style.setProperty('--glow-y', y + '%');
     });
   });
+})();
+
+// ===== Easter Egg 1: Console ASCII Art =====
+(function() {
+  console.log('%c' +
+    ' _____                              \n' +
+    '|_   _|_ _ _ __  _ __ ___   __ _ _   _ \n' +
+    '  | |/ _` | \'_ \\| \'_ ` _ \\ / _` | | | |\n' +
+    '  | | (_| | | | | | | | | | (_| | |_| |\n' +
+    '  |_|\\__,_|_| |_|_| |_| |_|\\__,_|\\__, |\n' +
+    '                                   |___/ \n',
+    'color: #ff9900; font-family: monospace; font-size: 12px;'
+  );
+  console.log('%cHey, you\'re poking around the console? I like your style. 👀', 'color: #00d4ff; font-size: 14px;');
+  console.log('%cHire me: tanmayshinde197@gmail.com', 'color: #e0e0e0; font-size: 12px;');
+  console.log('%cGitHub: github.com/tanmayshinde197', 'color: #e0e0e0; font-size: 12px;');
+  console.log('%c\n🥚 Psst... there are 8 easter eggs hidden on this site. Here are some hints:', 'color: #ff9900; font-size: 11px;');
+  console.log('%c  1. You just found one.\n  2. Old school gamers know the code.\n  3. Click things. A lot.\n  4. Leave me. See what happens.\n  5. With great power comes great root access.\n  6. Patience pays off in the terminal.\n  7. Right-click if you dare.\n  8. Time flies when you\'re hovering.', 'color: #8888a0; font-size: 11px; font-family: monospace;');
+})();
+
+// ===== Easter Egg 2: Konami Code → Matrix Rain =====
+(function() {
+  var konamiSeq = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  var konamiPos = 0;
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === konamiSeq[konamiPos]) {
+      konamiPos++;
+      if (konamiPos === konamiSeq.length) {
+        konamiPos = 0;
+        startMatrixRain();
+        if (window.eggFound) window.eggFound('konami');
+      }
+    } else {
+      konamiPos = 0;
+    }
+  });
+
+  function startMatrixRain() {
+    var c = document.createElement('canvas');
+    c.id = 'matrix-rain';
+    c.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:9999;pointer-events:none;opacity:0.9;';
+    document.body.appendChild(c);
+    var ctx = c.getContext('2d');
+    c.width = window.innerWidth;
+    c.height = window.innerHeight;
+
+    var cols = Math.floor(c.width / 16);
+    var drops = [];
+    for (var i = 0; i < cols; i++) drops[i] = Math.random() * -100;
+
+    var chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789TANMAYSHINDE';
+
+    var interval = setInterval(function() {
+      ctx.fillStyle = 'rgba(10,10,15,0.05)';
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = '#00d4ff';
+      ctx.font = '14px monospace';
+
+      for (var i = 0; i < drops.length; i++) {
+        var ch = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillStyle = Math.random() > 0.95 ? '#ff9900' : '#00d4ff';
+        ctx.fillText(ch, i * 16, drops[i] * 16);
+        if (drops[i] * 16 > c.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }, 40);
+
+    setTimeout(function() {
+      clearInterval(interval);
+      c.style.transition = 'opacity 1s';
+      c.style.opacity = '0';
+      setTimeout(function() { c.remove(); }, 1000);
+    }, 5000);
+  }
+})();
+
+// ===== Easter Egg 3: Click Logo 5 Times =====
+(function() {
+  var logo = document.querySelector('.nav-logo');
+  if (!logo) return;
+  var clicks = 0;
+  var timer = null;
+
+  logo.addEventListener('click', function(e) {
+    clicks++;
+    clearTimeout(timer);
+    timer = setTimeout(function() { clicks = 0; }, 2000);
+
+    if (clicks >= 5) {
+      clicks = 0;
+      if (window.eggFound) window.eggFound('logo');
+      logo.style.transition = 'transform 0.6s ease, color 0.3s';
+      logo.style.transform = 'rotate(360deg) scale(1.3)';
+      logo.style.color = '#00d4ff';
+
+      var tip = document.createElement('div');
+      tip.textContent = 'You found me! 🎉';
+      tip.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#12121a;color:#ff9900;padding:12px 24px;border-radius:8px;font-family:monospace;font-size:0.9rem;z-index:9999;border:1px solid #ff9900;';
+      document.body.appendChild(tip);
+
+      setTimeout(function() {
+        logo.style.transform = 'rotate(0) scale(1)';
+        logo.style.color = '';
+      }, 800);
+      setTimeout(function() { tip.remove(); }, 2500);
+    }
+  });
+})();
+
+// ===== Easter Egg 4: Tab Title Change =====
+(function() {
+  var originalTitle = document.title;
+  var messages = [
+    'Come back! I have more skills...',
+    'Hey, where did you go? 👀',
+    'Miss me yet?',
+    'The terminal is lonely...',
+  ];
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      document.title = messages[Math.floor(Math.random() * messages.length)];
+      if (window.eggFound) window.eggFound('tab');
+    } else {
+      document.title = originalTitle;
+    }
+  });
+})();
+
+// ===== Easter Egg 5: Type "sudo" for Sparkle Trail =====
+(function() {
+  var buffer = '';
+  var sparkleActive = false;
+
+  document.addEventListener('keypress', function(e) {
+    buffer += e.key;
+    if (buffer.length > 10) buffer = buffer.slice(-10);
+
+    if (buffer.includes('sudo') && !sparkleActive) {
+      sparkleActive = true;
+      buffer = '';
+      if (window.eggFound) window.eggFound('sudo');
+
+      var sparkleHandler = function(e) {
+        for (var i = 0; i < 3; i++) {
+          var s = document.createElement('div');
+          s.textContent = ['✨','⚡','🔥','💫','⭐'][Math.floor(Math.random() * 5)];
+          s.style.cssText = 'position:fixed;pointer-events:none;z-index:9999;font-size:' + (10 + Math.random() * 14) + 'px;left:' + (e.clientX + (Math.random()-0.5)*30) + 'px;top:' + (e.clientY + (Math.random()-0.5)*30) + 'px;transition:all 0.8s ease-out;opacity:1;';
+          document.body.appendChild(s);
+          setTimeout(function(el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(-40px) scale(0)';
+          }, 10, s);
+          setTimeout(function(el) { el.remove(); }, 800, s);
+        }
+      };
+
+      document.addEventListener('mousemove', sparkleHandler);
+      setTimeout(function() {
+        document.removeEventListener('mousemove', sparkleHandler);
+        sparkleActive = false;
+      }, 5000);
+    }
+  });
+})();
+
+// ===== Easter Egg 7: Right-Click Toast =====
+(function() {
+  document.addEventListener('contextmenu', function(e) {
+    // Don't block it, just show a toast
+    if (window.eggFound) window.eggFound('rightclick');
+    var toast = document.createElement('div');
+    toast.textContent = 'Nice try. The source code is on GitHub anyway 😄';
+    toast.style.cssText = 'position:fixed;left:' + e.clientX + 'px;top:' + e.clientY + 'px;background:#12121a;color:#ff9900;padding:10px 20px;border-radius:8px;font-family:monospace;font-size:0.8rem;z-index:9999;border:1px solid #1e1e2e;opacity:0;transition:all 0.3s ease;pointer-events:none;white-space:nowrap;transform:translate(-50%,-100%) translateY(10px);';
+    document.body.appendChild(toast);
+
+    setTimeout(function() {
+      toast.style.opacity = '1';
+      toast.style.transform = 'translate(-50%,-100%) translateY(0)';
+    }, 10);
+    setTimeout(function() {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translate(-50%,-100%) translateY(10px)';
+    }, 2500);
+    setTimeout(function() { toast.remove(); }, 3000);
+  });
+})();
+
+// ===== Easter Egg 8: Footer Hover Shows Time on Site =====
+(function() {
+  var startTime = Date.now();
+  var footerP = document.querySelector('.footer p');
+  if (!footerP) return;
+  var originalText = footerP.innerHTML;
+
+  footerP.addEventListener('mouseenter', function() {
+    if (window.eggFound) window.eggFound('footer');
+    var seconds = Math.floor((Date.now() - startTime) / 1000);
+    var mins = Math.floor(seconds / 60);
+    var secs = seconds % 60;
+    var timeStr = mins > 0 ? mins + 'm ' + secs + 's' : secs + 's';
+    footerP.innerHTML = 'You\'ve been here for ' + timeStr + '. Time well spent? ⏱️';
+  });
+
+  footerP.addEventListener('mouseleave', function() {
+    footerP.innerHTML = originalText;
+  });
+})();
+
+// ===== Easter Egg Tracker =====
+(function() {
+  var found = JSON.parse(localStorage.getItem('eggs-found') || '{}');
+  var total = 8;
+  var toggle = document.getElementById('secretsToggle');
+  var popup = document.getElementById('secretsPopup');
+  var closeBtn = document.getElementById('secretsClose');
+  if (!toggle || !popup) return;
+
+  function updateCounter() {
+    var count = Object.keys(found).length;
+    toggle.textContent = '🥚 secrets: ' + count + '/' + total + ' found';
+    // Update checkmarks
+    document.querySelectorAll('.secret-check').forEach(function(el) {
+      if (found[el.dataset.egg]) {
+        el.textContent = '✓';
+        el.classList.add('found');
+      }
+    });
+    localStorage.setItem('eggs-found', JSON.stringify(found));
+  }
+
+  // Expose globally so each egg can call it
+  window.eggFound = function(name) {
+    if (!found[name]) {
+      found[name] = true;
+      updateCounter();
+    }
+  };
+
+  // Auto-mark console as found (they opened the page, it logged)
+  window.eggFound('console');
+
+  toggle.addEventListener('click', function() {
+    popup.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', function() {
+    popup.classList.remove('open');
+  });
+
+  popup.addEventListener('click', function(e) {
+    if (e.target === popup) popup.classList.remove('open');
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') popup.classList.remove('open');
+  });
+
+  updateCounter();
 })();

@@ -392,6 +392,8 @@ ul { list-style: none; }
   border: 1px solid var(--border);
   border-top: none;
   min-height: 180px;
+  overflow-x: hidden;
+  word-break: break-word;
 }
 
 .terminal-body .prompt {
@@ -401,7 +403,8 @@ ul { list-style: none; }
 
 .terminal-body .typing {
   color: var(--text-muted);
-  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .cursor-blink {
@@ -1163,6 +1166,13 @@ ul { list-style: none; }
 
   .hero-terminal {
     max-width: 100%;
+    animation: none;
+  }
+
+  .terminal-body {
+    font-size: 0.75rem;
+    padding: 14px;
+    min-height: 150px;
   }
 
   .nav-toggle {

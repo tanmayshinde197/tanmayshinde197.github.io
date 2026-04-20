@@ -891,6 +891,66 @@ ul { list-style: none; }
   color: var(--accent);
 }
 
+/* ===== Publications ===== */
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.pub-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.3s;
+}
+
+.pub-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pub-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.pub-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  color: var(--accent2);
+}
+
+.pub-list {
+  list-style: none;
+  padding: 0;
+}
+
+.pub-list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+.pub-list li:last-child {
+  border-bottom: none;
+}
+
+.pub-list a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.pub-list a:hover {
+  color: var(--accent2);
+  text-decoration: underline;
+}
+
 /* ===== Education ===== */
 .education-grid {
   display: grid;

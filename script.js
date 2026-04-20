@@ -672,3 +672,40 @@ window.addEventListener('scroll', function() {
 
   updateCounter();
 })();
+
+// ===== Dark/Light Mode Toggle =====
+(function() {
+  var toggle = document.getElementById('themeToggle');
+  if (!toggle) return;
+
+  // Check saved preference
+  var saved = localStorage.getItem('theme');
+  if (saved === 'light') {
+    document.documentElement.classList.add('light');
+    toggle.textContent = '☀️';
+  }
+
+  toggle.addEventListener('click', function() {
+    var isLight = document.documentElement.classList.toggle('light');
+    toggle.textContent = isLight ? '☀️' : '🌙';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+})();
+
+// ===== Scroll to Top Button =====
+(function() {
+  var btn = document.getElementById('scrollTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 500) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();

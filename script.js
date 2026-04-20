@@ -709,3 +709,46 @@ window.addEventListener('scroll', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
+
+// ===== Performance Badge =====
+(function() {
+  var badge = document.getElementById('perfBadge');
+  var modal = document.getElementById('perfModal');
+  var closeBtn = document.getElementById('perfClose');
+  var scoreEl = document.getElementById('perfScore');
+  var loadTimeEl = document.getElementById('perfLoadTime');
+  var domCountEl = document.getElementById('perfDomCount');
+  var resCountEl = document.getElementById('perfResCount');
+  if (!badge || !modal) return;
+
+  // Measure performance
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var perf = performance.getEntriesByType('navigation')[0];
+      var loadTime = Math.round(perf ? perf.loadEventEnd - perf.startTime : performance.now());
+      var domCount = document.querySelectorAll('*').length;
+      var resCount = performance.getEntriesByType('resource').length;
+
+      scoreEl.textContent = loadTime;
+      loadTimeEl.textContent = loadTime;
+      domCountEl.textContent = domCount;
+      resCountEl.textContent = resCount;
+    }, 100);
+  });
+
+  badge.addEventListener('click', function() {
+    modal.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', function() {
+    modal.classList.remove('open');
+  });
+
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) modal.classList.remove('open');
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') modal.classList.remove('open');
+  });
+})();

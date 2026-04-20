@@ -549,6 +549,43 @@
     <p>&copy; 2025 Tanmay Shinde. Built between escalations, powered by ☕ and sudo privileges.</p>
     <span class="easter-egg">404: social life not found.</span>
     <span class="secrets-counter" id="secretsToggle">🥚 secrets: 0/8 found</span>
+    <button class="perf-badge" id="perfBadge" aria-label="View site details">
+      <span class="perf-score" id="perfScore">...</span>ms
+    </button>
+    <div class="perf-modal-overlay" id="perfModal">
+      <div class="perf-modal">
+        <button class="perf-modal-close" id="perfClose">&times;</button>
+        <h3>Under the Hood</h3>
+        <div class="perf-section">
+          <h4>⚡ Performance</h4>
+          <p>Page load: <strong id="perfLoadTime">...</strong>ms | DOM elements: <strong id="perfDomCount">...</strong> | Resources: <strong id="perfResCount">...</strong></p>
+        </div>
+        <div class="perf-section">
+          <h4>🛠️ Built With</h4>
+          <div class="built-with-tags">
+            <span class="bw-tag">HTML5</span>
+            <span class="bw-tag">CSS3</span>
+            <span class="bw-tag">Vanilla JS</span>
+            <span class="bw-tag">Canvas API</span>
+            <span class="bw-tag">IntersectionObserver</span>
+            <span class="bw-tag">Service Worker</span>
+            <span class="bw-tag">Google Fonts</span>
+            <span class="bw-tag">GitHub Pages</span>
+          </div>
+        </div>
+        <div class="perf-section">
+          <h4>♿ Accessibility</h4>
+          <p>Semantic HTML, ARIA labels, keyboard navigable, responsive from 320px to 4K, prefers-reduced-motion respected, colour contrast AA compliant.</p>
+        </div>
+        <div class="perf-section">
+          <h4>📊 GitHub Activity</h4>
+          <img loading="lazy" src="https://ghchart.rshah.org/ff9900/tanmayshinde197" alt="GitHub contribution graph" class="gh-chart">
+        </div>
+        <div class="perf-section perf-footer-note">
+          <p>No frameworks. No dependencies. Just HTML, CSS, and JS.</p>
+        </div>
+      </div>
+    </div>
     <div class="secrets-popup" id="secretsPopup">
       <div class="secrets-popup-inner">
         <button class="secrets-close" id="secretsClose">&times;</button>

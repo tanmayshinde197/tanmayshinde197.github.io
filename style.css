@@ -1433,3 +1433,133 @@ html.light .co-logo {
   transform: translateY(-3px);
   box-shadow: 0 8px 24px var(--accent-glow);
 }
+
+/* ===== Performance Badge & Modal ===== */
+.perf-badge {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  cursor: pointer;
+  z-index: 998;
+  transition: all 0.3s;
+}
+
+.perf-badge:hover {
+  border-color: var(--accent);
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.perf-score {
+  font-weight: 700;
+}
+
+.perf-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+}
+
+.perf-modal-overlay.open {
+  display: flex;
+}
+
+.perf-modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  max-width: 560px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  animation: popIn 0.3s ease forwards;
+}
+
+.perf-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.perf-modal-close:hover {
+  color: var(--accent);
+}
+
+.perf-modal h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.perf-section {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.perf-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.perf-section h4 {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.perf-section p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.built-with-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bw-tag {
+  background: rgba(255, 153, 0, 0.1);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 153, 0, 0.2);
+}
+
+.gh-chart {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.perf-footer-note p {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent2);
+  text-align: center;
+}

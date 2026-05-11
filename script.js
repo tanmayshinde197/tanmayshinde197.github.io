@@ -757,3 +757,19 @@ window.addEventListener('scroll', function() {
     if (e.key === 'Escape') modal.classList.remove('open');
   });
 })();
+
+// ===== Track CV Download =====
+(function() {
+  var cvLinks = document.querySelectorAll('a[href="tanmay_resume.pdf"]');
+  cvLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'file_download', {
+          event_category: 'CV',
+          event_label: 'tanmay_resume.pdf',
+          value: 1
+        });
+      }
+    });
+  });
+})();

@@ -46,6 +46,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: 0;
+  background: none;
 }
 
 .bg-orbs {
@@ -1379,7 +1380,8 @@ html.light {
 }
 
 html.light .bg-canvas {
-  opacity: 0.15;
+  opacity: 0.4;
+  background: none;
 }
 
 html.light .bg-orbs .orb {

@@ -177,7 +177,8 @@
 
   // ===== Main Animation Loop =====
   function animate() {
-    ctx.fillStyle = '#0a0a0f';
+    var bgColor = document.documentElement.classList.contains('light') ? '#f5f5f7' : '#0a0a0f';
+    ctx.fillStyle = bgColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     drawParticles();
     drawNeuralNetwork();
